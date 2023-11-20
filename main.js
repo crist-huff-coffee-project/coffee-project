@@ -36,8 +36,6 @@ function searchCoffees(e){
     e.preventDefault()
     let filterCoffee = []
     let input = nameSelection.value.toLowerCase()
-    console.log(input)
-    console.log(filterCoffee)
     for (let i = 0; i < coffees.length; i++) {
         let coffee = coffees[i].name;
         if (roastSelection.value === 'all' && coffee.toLowerCase().includes(input)) {
@@ -63,8 +61,11 @@ function addCoffee (e) {
         name: newCoffee,
         roast: newRost,
     }
-    coffees.push(newCoffee)
-    document.querySelector("#addType").vale = "";
+    coffees.push(newObject)
+    document.querySelector("#addType").value = "";
+    coffees.sort((a, b) => a.id - b.id);
+    coffees.reverse((a, b) => a.id - b.id);
+    tbody.innerHTML = renderCoffees(coffees)
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -92,5 +93,5 @@ const roastSelection = document.querySelector('#roast-selection');
 
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener('keyup', searchCoffees);
-coffees.sort((a, b) => a.id - b.id);
+coffees.reverse((a, b) => a.id - b.id);
 tbody.innerHTML = renderCoffees(coffees);

@@ -1,30 +1,38 @@
 "use strict"
 
-function renderCoffee(coffee) {
- let html = `<div>${coffee.name}</div>
-    <div>${coffee.roast}</div>`
+function renderCoffee(coffee) {  //creates inner html for coffees
+    let html = `<div class="col-3">${coffee.name}</div>
+    <div class="col 3">${coffee.roast}</div>`
 
     return html;
 }
 
-function renderCoffees(coffees) {
+function renderCoffees(coffees) { //creates coffee names from coffees object
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
-function updateCoffees(e) {
+function updateCoffees(e) { //update coffee list by roast selection
     e.preventDefault(); // don't submit the form, we just want to update the data
     const selectedRoast = roastSelection.value;
     const filteredCoffees = [];
-    coffees.forEach( coffee => {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    if (selectedRoast === 'all') {
+        tbody.innerHTML = renderCoffees(coffees);
+
+    } else {
+        coffees.forEach(coffee => {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
+}
+function searchCoffees(e){
+
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -46,11 +54,12 @@ const coffees = [
 ];
 
 const tbody = document.querySelector('#coffees');
-const submitButton = document.querySelector('#submit');
+const nameSelection = document.querySelector('#coffee-search');
 const roastSelection = document.querySelector('#roast-selection');
 
+
+roastSelection.addEventListener('change', updateCoffees);
+nameSelection.addEventListener('change', searchCoffees);
+
+coffees.reverse((a, b) => a.id - b.id);
 tbody.innerHTML = renderCoffees(coffees);
-
-submitButton.addEventListener('click', updateCoffees);
-
-coffees.reverse();

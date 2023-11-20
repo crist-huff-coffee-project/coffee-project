@@ -16,3 +16,17 @@ body {
 .hrLine {
 
 }
+.long {
+    width: 75%;
+    margin-left: 5em;
+}
+article div {
+    display: inline-block;
+}
+article p {
+    display: inline-block;
+    color: slategray;
+}
+article h2 {
+    display: inline-block;
+}

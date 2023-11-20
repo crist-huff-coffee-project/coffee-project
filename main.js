@@ -32,7 +32,18 @@ function updateCoffees(e) { //update coffee list by roast selection
     }
 }
 function searchCoffees(e){
-
+    e.preventDefault()
+    let filterCoffee = []
+    let input = nameSelection.value.toLowerCase()
+    console.log(input)
+    console.log(filterCoffee)
+    for (let i = 0; i < coffees.length; i++) {
+        let coffee = coffees[i].name;
+        if (coffee.toLowerCase().includes(input)) {
+            filterCoffee.push(coffees[i].name)
+        }
+        tbody.innerHTML = renderCoffees(filterCoffee);
+    }
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -59,7 +70,7 @@ const roastSelection = document.querySelector('#roast-selection');
 
 
 roastSelection.addEventListener('change', updateCoffees);
-nameSelection.addEventListener('change', searchCoffees);
+nameSelection.addEventListener('keyup', searchCoffees);
 
 coffees.reverse((a, b) => a.id - b.id);
 tbody.innerHTML = renderCoffees(coffees);

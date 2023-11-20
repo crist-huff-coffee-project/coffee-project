@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {  //creates inner html for coffees
-    let html = `<div class="col-6"><h2>${coffee.name}</h2><p class="ms-3">${coffee.roast}</pc></div>`
+    let html = `<div class="col-12 col-lg-6"><h2>${coffee.name}</h2><p class="ms-3">${coffee.roast}</pc></div>`
 
     return html;
 }

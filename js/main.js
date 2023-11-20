@@ -60,11 +60,17 @@ function addCoffee (e) {
         name: newCoffee,
         roast: newRost,
     }
-    coffees.push(newObject)
-    document.querySelector("#addType").value = "";
-    coffees.sort((a, b) => a.id - b.id);
-    coffees.reverse((a, b) => a.id - b.id);
-    tbody.innerHTML = renderCoffees(coffees)
+    if (newCoffee === "") {
+        alert("please add a coffee name");
+    } else {
+
+
+        coffees.push(newObject)
+        document.querySelector("#addType").value = "";
+        coffees.sort((a, b) => a.id - b.id);
+        coffees.reverse((a, b) => a.id - b.id);
+        tbody.innerHTML = renderCoffees(coffees)
+    }
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide

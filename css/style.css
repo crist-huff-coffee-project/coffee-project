@@ -4,7 +4,24 @@
 }
 
 body {
-    background: linear-gradient(to right, teal, blue);
+    background-image: url("../img/coffee2.png");
+    background-size: cover;
+}
+input, select {
+    background-color: #924a07;
+    color: antiquewhite;
+    width: 100%;
+    border-radius: 50px;
+    height: 2.5em;
+}
+
+::placeholder {
+    color: antiquewhite;
+}
+
+aside h2 {
+    display: inline-block;
+    margin-left: 33%;
 }
 
 .coffeeHeader {
@@ -13,9 +30,7 @@ body {
     text-align: center;
 }
 
-.hrLine {
 
-}
 .long {
     width: 75%;
     margin-left: 12%;

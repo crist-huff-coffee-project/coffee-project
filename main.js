@@ -1,11 +1,8 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<tr class="coffee">';
-    html += `<td>${coffee.id}</td>`;
-    html += `<td>${coffee.name}</td>`;
-    html += `<td>${coffee.roast}</td>`;
-    html += '</tr>';
+ let html = `<div>${coffee.name}</div>
+    <div>${coffee.roast}</div>`
 
     return html;
 }
@@ -55,3 +52,5 @@ const roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+coffees.reverse();

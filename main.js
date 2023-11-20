@@ -1,8 +1,8 @@
 "use strict"
 
 function renderCoffee(coffee) {  //creates inner html for coffees
-    let html = `<div class="col-3">${coffee.name}</div>
-    <div class="col 3">${coffee.roast}</div>`
+    let html = `<div class="col-3"><h2>${coffee.name}</h2></div>
+    <div class="col-3"><p>${coffee.roast}</p></div>`
 
     return html;
 }
@@ -21,7 +21,7 @@ function updateCoffees(e) { //update coffee list by roast selection
     const filteredCoffees = [];
     if (selectedRoast === 'all') {
         tbody.innerHTML = renderCoffees(coffees);
-
+        searchCoffees(e)
     } else {
         coffees.forEach(coffee => {
             if (coffee.roast === selectedRoast) {
@@ -29,6 +29,7 @@ function updateCoffees(e) { //update coffee list by roast selection
             }
         });
         tbody.innerHTML = renderCoffees(filteredCoffees);
+        searchCoffees(e)
     }
 }
 function searchCoffees(e){
@@ -39,8 +40,11 @@ function searchCoffees(e){
     console.log(filterCoffee)
     for (let i = 0; i < coffees.length; i++) {
         let coffee = coffees[i].name;
-        if (coffee.toLowerCase().includes(input)) {
-            filterCoffee.push(coffees[i].name)
+        if (roastSelection.value === 'all' && coffee.toLowerCase().includes(input)) {
+                filterCoffee.push(coffees[i])
+        }
+        else if (coffee.toLowerCase().includes(input) && coffees[i].roast === roastSelection.value){
+            filterCoffee.push(coffees[i])
         }
         tbody.innerHTML = renderCoffees(filterCoffee);
     }
@@ -71,6 +75,5 @@ const roastSelection = document.querySelector('#roast-selection');
 
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener('keyup', searchCoffees);
-
 coffees.reverse((a, b) => a.id - b.id);
 tbody.innerHTML = renderCoffees(coffees);

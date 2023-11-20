@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Yet Another Coffee Shop!</title>
@@ -34,6 +34,19 @@
                 <option value="dark">Dark</option>
             </select>
         </div>
+    </form>
+    <form>
+        <label for="addType">Coffee Name</label>
+        <input type="text" name="addType" id="addType" class="form-control">
+        <div class="mb-3">
+            <label for="roast-add" class="form-label">Select</label>
+            <select class="form-select" id="roast-add"> <!-- change id-->
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-success">add coffee</button>
     </form>
 </aside>
 </main>

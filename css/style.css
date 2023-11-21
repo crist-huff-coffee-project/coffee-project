@@ -4,16 +4,11 @@ body { /*image, text styling*/
     background-size: cover;
     font-family: 'Covered By Your Grace', cursive;
 }
-.card {
-    width: 9em;
-    background-color: #ffffff60;
-}
-.card:hover{
-    background-color: #f3f3f3;
-}
+
 i {
     color: #924a07;
 }
+
 input, select { /*coloring for the input and select */
     background-color: #924a07;
     color: antiquewhite;
@@ -27,7 +22,7 @@ aside h2 { /*styling for the h2: Yet Another Coffee Shop*/
     font-size: 3em;
 }
 
-article > div { /*lets all coffees be side by side in col*/
+article>div { /*lets all coffees be side by side in col*/
     display: inline-block;
 }
 
@@ -51,7 +46,7 @@ article h2 { /*pushes the 'light, medium, dark' next to the coffee names*/
     padding: 0;
 }
 
-.long { /*styles the 'add coffee' button */
+.addBtn { /*styles the 'add coffee' button */
     width: 75%;
     margin-left: 12%;
     background-color: sandybrown;
@@ -60,4 +55,14 @@ article h2 { /*pushes the 'light, medium, dark' next to the coffee names*/
 
 .modal-color { /*styles the modal popup*/
     background-color: rgb(246, 242, 226);
+}
+
+.card {
+    width: auto;
+    margin: 0 0.25em;
+    background-color: #ffffff60;
+}
+
+.card:hover{
+    background-color: #8b4513;
 }

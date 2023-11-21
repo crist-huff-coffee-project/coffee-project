@@ -45,6 +45,7 @@ article h2 { /*pushes the 'light, medium, dark' next to the coffee names*/
 .long { /*styles the 'add coffee' button */
     width: 75%;
     margin-left: 12%;
+    background-color: sandybrown;
 }
 
 .modal-color { /*styles the modal popup*/

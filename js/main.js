@@ -84,7 +84,7 @@
         document.querySelector("#modalClose").addEventListener("click", () => {
             document.querySelector("#modal").classList.remove("show");
             document.querySelector('#modal').removeAttribute("style");
-        });
+        },{once:true});
     }
 
     // variables

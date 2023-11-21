@@ -56,6 +56,10 @@ article h2 { /*pushes the 'light, medium, dark' next to the coffee names*/
 .modal-color { /*styles the modal popup*/
     background-color: rgb(246, 242, 226);
 }
+.modal-dialog *{
+    display: inline-block;
+    text-align: center;
+}
 
 .card {
     width: auto;

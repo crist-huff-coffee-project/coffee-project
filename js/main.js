@@ -56,12 +56,9 @@
             roast: newRost,
         };
         if (newCoffee === "") {
-            document.querySelector("#modal").classList.add("show");
-            document.querySelector("#modal").style.display = "block";
-            document.querySelector("#modalClose").addEventListener("click", () => {
-                document.querySelector("#modal").classList.remove("show");
-                document.querySelector('#modal').removeAttribute("style");
-            });
+            let mHead = "Alert invalid entry"
+            let mBody = "<i class=\"fa-solid fa-mug-hot\"></i>Please insert a coffee name<i class=\"fa-solid fa-mug-hot\"></i>"
+            modal(mHead, mBody)
         } else {
             coffees.unshift(newObject);
             document.querySelector("#addType").value = "";
@@ -76,6 +73,18 @@
 
     function getStorage(key) {
         return JSON.parse(sessionStorage.getItem(key));
+    }
+    function modal(mhead, mbody){
+        let modalHead = document.querySelector("#modalHead");
+        let modalBody = document.querySelector("#modalBody");
+        modalHead.innerText = mhead;
+        modalBody.innerHTML = mbody;
+        document.querySelector("#modal").classList.add("show");
+        document.querySelector("#modal").style.display = "block";
+        document.querySelector("#modalClose").addEventListener("click", () => {
+            document.querySelector("#modal").classList.remove("show");
+            document.querySelector('#modal').removeAttribute("style");
+        });
     }
 
     // variables

@@ -61,7 +61,7 @@
             document.querySelector("#modal").style.display = "block";
             document.querySelector("#modalClose").addEventListener("click", () =>{
                 document.querySelector("#modal").classList.remove("show");
-                document.querySelector('#modal').setAttribute("style", "");
+                document.querySelector('#modal').removeAttribute("style");
             });
         } else {
             coffees.unshift(newObject);

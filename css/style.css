@@ -1,12 +1,12 @@
 * {
     font-family: cursive;
-
 }
 
 body {
     background-image: url("../img/coffee2.png");
     background-size: cover;
 }
+
 input, select {
     background-color: #924a07;
     color: antiquewhite;
@@ -15,13 +15,26 @@ input, select {
     height: 2.5em;
 }
 
-::placeholder {
-    color: antiquewhite;
-}
-
 aside h2 {
     display: inline-block;
     margin-left: 33%;
+}
+
+article div {
+    display: inline-block;
+}
+
+article p {
+    display: inline-block;
+    color: slategray;
+}
+
+article h2 {
+    display: inline-block;
+}
+
+::placeholder {
+    color: antiquewhite;
 }
 
 .coffeeHeader {
@@ -30,18 +43,7 @@ aside h2 {
     text-align: center;
 }
 
-
 .long {
     width: 75%;
     margin-left: 12%;
-}
-article div {
-    display: inline-block;
-}
-article p {
-    display: inline-block;
-    color: slategray;
-}
-article h2 {
-    display: inline-block;
 }

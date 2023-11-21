@@ -1,10 +1,8 @@
-* {
-    font-family: cursive;
-}
 
 body {
     background-image: url("../img/coffee2.png");
     background-size: cover;
+    font-family: 'Covered By Your Grace', cursive;
 }
 
 input, select {
@@ -18,6 +16,7 @@ input, select {
 aside h2 {
     display: inline-block;
     margin-left: 33%;
+    font-size: 3em;
 }
 
 article div {
@@ -41,6 +40,7 @@ article h2 {
     font-weight: bold;
     font-size: 8em;
     text-align: center;
+    padding: 0;
 }
 
 .long {

@@ -19,7 +19,7 @@ aside h2 {
     font-size: 3em;
 }
 
-article div {
+article>div {
     display: inline-block;
 }
 
@@ -46,4 +46,7 @@ article h2 {
 .long {
     width: 75%;
     margin-left: 12%;
+}
+.modal-color {
+    background-color: rgb(246, 242, 226);
 }

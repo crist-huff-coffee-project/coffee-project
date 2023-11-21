@@ -57,19 +57,27 @@
             roast: newRost,
         }
         if (newCoffee === "") {
-            alert("please add a coffee name");
+            document.querySelector("#modal").classList.add("show");
+            document.querySelector("#modal").style.display = "block";
+            document.querySelector("#modalClose").addEventListener("click", () =>{
+                document.querySelector("#modal").classList.remove("show")
+            })
         } else {
-            coffees.push(newObject)
+            coffees.unshift(newObject)
             document.querySelector("#addType").value = "";
-            coffees.sort((a, b) => a.id - b.id);
-            coffees.reverse((a, b) => a.id - b.id);
             updateCoffees(e)
+            setStorage('userCoffee', coffees)
         }
     }
-
+    function setStorage(key, value) {
+        sessionStorage.setItem(key, JSON.stringify(value))
+    }
+    function getStorage(key) {
+      return  JSON.parse(sessionStorage.getItem(key))
+    }
 // variables
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-    const coffees = [
+    let coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
         {id: 2, name: 'Half City', roast: 'light'},
         {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -97,5 +105,9 @@
     nameSelection.addEventListener('keyup', searchCoffees);
 //initial page load follows
     coffees.reverse((a, b) => a.id - b.id);
+    let sessionData = getStorage('userCoffee')
+    if (sessionData){
+        coffees = sessionData
+    }
     tbody.innerHTML = renderCoffees(coffees);
 })()

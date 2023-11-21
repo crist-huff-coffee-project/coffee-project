@@ -19,7 +19,7 @@
         const selectedRoast = roastSelection.value;
         const filteredCoffees = [];
         if (selectedRoast === 'all') {
-            tbody.innerHTML = renderCoffees(coffees);
+            coffeeBody.innerHTML = renderCoffees(coffees);
             searchCoffees(e)
         } else {
             coffees.forEach(coffee => {
@@ -27,7 +27,7 @@
                     filteredCoffees.push(coffee);
                 }
             });
-            tbody.innerHTML = renderCoffees(filteredCoffees);
+            coffeeBody.innerHTML = renderCoffees(filteredCoffees);
             searchCoffees(e)
         }
     }
@@ -43,7 +43,7 @@
             } else if (coffee.toLowerCase().includes(input) && coffees[i].roast === roastSelection.value) {
                 filterCoffee.push(coffees[i])
             }
-            tbody.innerHTML = renderCoffees(filterCoffee);
+            coffeeBody.innerHTML = renderCoffees(filterCoffee);
         }
     }
 
@@ -95,7 +95,7 @@
     ];
 
     const addCoffeeButton = document.querySelector("#addCoffee");
-    const tbody = document.querySelector('#coffees');
+    const coffeeBody = document.querySelector('#coffees');
     const nameSelection = document.querySelector('#coffee-search');
     const roastSelection = document.querySelector('#roast-selection');
 
@@ -109,5 +109,5 @@
     if (sessionData){
         coffees = sessionData
     }
-    tbody.innerHTML = renderCoffees(coffees);
+    coffeeBody.innerHTML = renderCoffees(coffees);
 })()

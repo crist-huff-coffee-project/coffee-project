@@ -5,7 +5,7 @@ body { /*image, text styling*/
     font-family: 'Covered By Your Grace', cursive;
 }
 .card {
-    width: 12em;
+    width: 9em;
     background-color: #ffffff60;
 }
 .card:hover{

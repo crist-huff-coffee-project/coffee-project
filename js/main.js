@@ -61,6 +61,7 @@
             document.querySelector("#modal").style.display = "block";
             document.querySelector("#modalClose").addEventListener("click", () =>{
                 document.querySelector("#modal").classList.remove("show");
+                document.querySelector('#modal').setAttribute("style", "");
             });
         } else {
             coffees.unshift(newObject);
@@ -94,13 +95,13 @@
         {id: 14, name: 'French', roast: 'dark'},
     ];
 
-    const addCoffeeButton = document.querySelector("#addCoffee");
+    const addCoffeeButton = document.querySelector("#add-coffee");
     const coffeeBody = document.querySelector('#coffees');
     const nameSelection = document.querySelector('#coffee-search');
     const roastSelection = document.querySelector('#roast-selection');
 
 //event listeners
-    addCoffeeButton.addEventListener("click", addCoffee);
+    addCoffeeButton.addEventListener("submit", addCoffee);
     roastSelection.addEventListener('change', updateCoffees);
     nameSelection.addEventListener('keyup', searchCoffees);
 //initial page load follows

@@ -4,6 +4,13 @@ body { /*image, text styling*/
     background-size: cover;
     font-family: 'Covered By Your Grace', cursive;
 }
+.card {
+    width: 12em;
+    background-color: #ffffff60;
+}
+.card:hover{
+    background-color: #f3f3f3;
+}
 i {
     color: #924a07;
 }

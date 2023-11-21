@@ -4,7 +4,9 @@ body { /*image, text styling*/
     background-size: cover;
     font-family: 'Covered By Your Grace', cursive;
 }
-
+i {
+    color: #924a07;
+}
 input, select { /*coloring for the input and select */
     background-color: #924a07;
     color: antiquewhite;

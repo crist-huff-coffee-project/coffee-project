@@ -59,7 +59,7 @@
         if (newCoffee === "") {
             document.querySelector("#modal").classList.add("show");
             document.querySelector("#modal").style.display = "block";
-            document.querySelector("#modalClose").addEventListener("click", () =>{
+            document.querySelector("#modalClose").addEventListener("click", () => {
                 document.querySelector("#modal").classList.remove("show");
                 document.querySelector('#modal').removeAttribute("style");
             });
@@ -70,14 +70,17 @@
             setStorage('userCoffee', coffees);
         }
     }
+
     function setStorage(key, value) { //local storage for saving added coffee
         sessionStorage.setItem(key, JSON.stringify(value));
     }
+
     function getStorage(key) {
-      return  JSON.parse(sessionStorage.getItem(key));
+        return JSON.parse(sessionStorage.getItem(key));
     }
-// variables
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
+    // variables
+    // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     let coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
         {id: 2, name: 'Half City', roast: 'light'},
@@ -100,14 +103,15 @@
     const nameSelection = document.querySelector('#coffee-search');
     const roastSelection = document.querySelector('#roast-selection');
 
-//event listeners
+    //event listeners
     addCoffeeButton.addEventListener("submit", addCoffee);
     roastSelection.addEventListener('change', updateCoffees);
     nameSelection.addEventListener('keyup', searchCoffees);
-//initial page load follows
+
+    //initial page load follows
     coffees.reverse((a, b) => a.id - b.id);
     let sessionData = getStorage('userCoffee');
-    if (sessionData){
+    if (sessionData) {
         coffees = sessionData
     }
     coffeeBody.innerHTML = renderCoffees(coffees);

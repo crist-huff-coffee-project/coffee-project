@@ -69,7 +69,7 @@
             setStorage('userCoffee', coffees)
         }
     }
-    function setStorage(key, value) {
+    function setStorage(key, value) { //local storage for saving added coffee
         sessionStorage.setItem(key, JSON.stringify(value))
     }
     function getStorage(key) {
